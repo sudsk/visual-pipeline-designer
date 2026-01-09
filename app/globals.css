@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 241, 245, 249;
+  --background-start-rgb: 10, 14, 39;
+  --background-end-rgb: 15, 23, 42;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(30, 41, 59);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(99, 102, 241);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(129, 140, 248);
+}
+
+/* ReactFlow custom styles */
+.react-flow__node {
+  cursor: move;
+}
+
+.react-flow__handle {
+  width: 12px;
+  height: 12px;
+  border-width: 2px;
+}
+
+.react-flow__edge-path {
+  stroke-width: 2;
+}
+
+.react-flow__controls {
+  background: rgb(30, 41, 59) !important;
+  border: 1px solid rgb(51, 65, 85) !important;
+}
+
+.react-flow__controls button {
+  background: rgb(51, 65, 85) !important;
+  border-bottom: 1px solid rgb(71, 85, 105) !important;
+  color: rgb(226, 232, 240) !important;
+}
+
+.react-flow__controls button:hover {
+  background: rgb(71, 85, 105) !important;
+}
+
+.react-flow__minimap {
+  background: rgb(30, 41, 59) !important;
+  border: 1px solid rgb(51, 65, 85) !important;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.3s ease-out;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
